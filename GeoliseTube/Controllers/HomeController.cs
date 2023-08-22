@@ -1,22 +1,38 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using GeoliseTube.Models;
+using GeoliseTube.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace GeoliseTube.Controllers;
 
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
+    private readonly AppDbContext _context;
 
-    public HomeController(ILogger<HomeController> logger)
+    public HomeController(ILogger<HomeController> logger, AppDbContext context)
     {
         _logger = logger;
+        _context = context;
     }
 
     public IActionResult Index()
     {
-        return View();
+        var videos = _context.Videos.Include(m => m.Tags).ThenInclude(g => g.Tag).ToList();
+        return View(videos);
     }
+
+    public IActionResult Video(int? id)
+    {
+        var video = _context.Videos
+            .Where(m => m.Id == id)
+            .Include(m => m.Tags)
+            .ThenInclude(g => g.Tag)
+            .SingleOrDefault();
+        return View(video);
+    }
+
 
     public IActionResult Privacy()
     {

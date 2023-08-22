@@ -1,12 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace GeoliseTube.Services
+namespace GeoliseTube.Services;
+public interface IEmailSender
 {
-    public interface IEmailSender
-    {
-        
-    }
+    Task SendEmailAsync(string email, string subject, string htmlMessage);
 }
