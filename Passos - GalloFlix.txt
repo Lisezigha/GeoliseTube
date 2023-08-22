@@ -2342,8 +2342,8 @@ dotnet tool install -g dotnet-aspnet-codegenerator
 
 
 -- A atualização dos pacotes e a ferramenta de geração de códigos está instalada, agora é só gerar os controllers e views do CRUD:
-dotnet aspnet-codegenerator controller -name GenresController -m Genre -dc AppDbContext --relativeFolderPath Controllers -l "~/Views/Shared/_LayoutAdmin.cshtml" --referenceScriptLibraries
-dotnet aspnet-codegenerator controller -name MoviesController -m Movie -dc AppDbContext --relativeFolderPath Controllers -l "~/Views/Shared/_LayoutAdmin.cshtml" --referenceScriptLibraries
+dotnet aspnet-codegenerator controller -name TagsController -m Tag -dc AppDbContext --relativeFolderPath Controllers -l "~/Views/Shared/_LayoutAdmin.cshtml" --referenceScriptLibraries
+dotnet aspnet-codegenerator controller -name VideosController -m Video -dc AppDbContext --relativeFolderPath Controllers -l "~/Views/Shared/_LayoutAdmin.cshtml" --referenceScriptLibraries
 
 
 -- Abrir e alterar as linhas entre 46 a 57, do arquivo Views\Shared\_LayoutAdmin.cshtml, com o código abaixo:
