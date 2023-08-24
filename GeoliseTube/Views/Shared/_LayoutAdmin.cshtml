@@ -43,18 +43,18 @@
                             Dashboard
                         </a>
                     </li>
-                     <li>
-        <a asp-action="Index" asp-controller="Videos" class="nav-link @(ViewBag.Title == "Vídeos" ? "active" : "link-body-emphasis")">
-            <i class="bi bi-film me-2"></i>
-            Filmes
-        </a>
-    </li>
-    <li>
-        <a asp-action="Index" asp-controller="Tags" class="nav-link @(ViewBag.Title == "Tags" ? "active" : "link-body-emphasis")">
-            <i class="bi bi-list-stars me-2"></i>
-            Genêros
-        </a>
-    </li>
+                    <li>
+                        <a href="#" class="nav-link @(ViewBag.Title == "Filmes" ? "active" : "link-body-emphasis")">
+                            <i class="bi bi-film me-2"></i>
+                            Filmes
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link @(ViewBag.Title == "Genêros" ? "active" : "link-body-emphasis")">
+                            <i class="bi bi-list-stars me-2"></i>
+                            Genêros
+                        </a>
+                    </li>
                     <li>
                         <a href="#" class="nav-link @(ViewBag.Title == "Usuários" ? "active" : "link-body-emphasis")">
                             <i class="bi bi-people-fill me-2"></i>
@@ -121,3 +121,14 @@
 </body>
 
 </html>
+
+
+-- Abrir e alterar o arquivo Views\Admin\Index.cshtml:
+@{
+    ViewData["Title"] = "Dashboard";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Área Administrativa</h1>
+</div>
